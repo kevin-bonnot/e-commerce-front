@@ -1460,7 +1460,7 @@ type-fest@^0.20.2:
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.20.2.tgz#1bf207f4b28f91583666cb5fbd327887301cd5f4"
   integrity sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==
 
-typescript@^5.0.2:
+typescript@^5.0.2, typescript@^5.1.6:
   version "5.1.6"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.1.6.tgz#02f8ac202b6dad2c0dd5e0913745b47a37998274"
   integrity sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA==
@@ -1479,6 +1479,14 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+use-fetch-hook-renchglad@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/use-fetch-hook-renchglad/-/use-fetch-hook-renchglad-1.2.1.tgz#5a219c1a875d3da33fd028fd390252f2dfccb44d"
+  integrity sha512-QH83tQUhzccfS2Q4RtiDVHv0oNFKf6jvcy/pi23SNTcVZYlf/XSAUiKBjxgnMfC2tv/rTauN3As08eWSFWzH3Q==
+  dependencies:
+    react "^18.2.0"
+    typescript "^5.1.6"
 
 vite@^4.4.5:
   version "4.4.6"
