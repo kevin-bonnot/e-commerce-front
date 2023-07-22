@@ -1,4 +1,4 @@
-export default interface Product {
+interface Product {
   id: number;
   name: string;
   description: string;
@@ -6,3 +6,5 @@ export default interface Product {
   stock: number;
   is_active: boolean;
 }
+
+export default Product;
