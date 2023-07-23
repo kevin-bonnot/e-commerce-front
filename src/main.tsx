@@ -6,6 +6,12 @@ import Root from './pages/root/Root.tsx';
 import ErrorPage from './error-page.tsx';
 import Home from './pages/home/Home.tsx';
 import Products from './pages/products/Products.tsx';
+import ProductDetails from './pages/product-details/ProductDetails.tsx';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 
 const router = createBrowserRouter([
   {
@@ -21,6 +27,10 @@ const router = createBrowserRouter([
         path: 'products',
         element: <Products />
       },
+      {
+        path: 'products/:productId',
+        element: <ProductDetails />
+      }
     ]
   }
 ]);
