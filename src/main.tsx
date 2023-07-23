@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import {RouterProvider, createBrowserRouter } from 'react-router-dom';
+import {RouterProvider, createBrowserRouter} from 'react-router-dom';
 import Root from './pages/root/Root.tsx';
 import ErrorPage from './error-page.tsx';
 import Home from './pages/home/Home.tsx';
@@ -16,20 +16,20 @@ import '@fontsource/roboto/700.css';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Root />,
-    errorElement: <ErrorPage />,
+    element: <Root/>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         path: 'home',
-        element: <Home />
+        element: <Home/>
       },
       {
         path: 'products',
-        element: <Products />
+        element: <Products/>
       },
       {
         path: 'products/:productId',
-        element: <ProductDetails />
+        element: <ProductDetails/>
       }
     ]
   }
@@ -37,6 +37,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 );
