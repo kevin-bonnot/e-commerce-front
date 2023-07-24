@@ -4,7 +4,7 @@ interface Product {
   description: string;
   price: number;
   stock: number;
-  is_active: boolean;
+  image?: string;
 }
 
 export default Product;
