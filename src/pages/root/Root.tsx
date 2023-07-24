@@ -2,7 +2,17 @@ import {Link, Outlet} from 'react-router-dom';
 import {StoreContext} from '../../context/StoreContext.tsx';
 import useFetch from 'use-fetch-hook-renchglad/dist/useFetch';
 import Store from '../../models/store.ts';
-import {AppBar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography} from '@mui/material';
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography
+} from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import {useState, MouseEvent} from 'react';
 
@@ -16,7 +26,7 @@ const Root = () => {
     setAnchorElNav(null);
   };
 
-  const url = 'http://localhost:3000/api/store/1';
+  const url = `${import.meta.env.VITE_API_BASE}store/1`;
   const store = useFetch<Store>(url);
   if (store.error) {
     return <h1>Erreur</h1>;
@@ -75,10 +85,18 @@ const Root = () => {
               }}
             >
               <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">Accueil</Typography>
+                <Typography textAlign="center">
+                  <Link to='Home' style={{textDecoration: 'none', color: 'inherit'}}>
+                    Accueil
+                  </Link>
+                </Typography>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">Produits</Typography>
+                <Typography textAlign="center">
+                  <Link to='Products' style={{textDecoration: 'none', color: 'inherit'}}>
+                    Produits
+                  </Link>
+                </Typography>
               </MenuItem>
             </Menu>
           </Box>
@@ -100,34 +118,27 @@ const Root = () => {
             </Link>
           </Typography>
           <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{my: 2, color: 'white', display: 'block'}}
-            >
-              Accueil
-            </Button>
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{my: 2, color: 'white', display: 'block'}}
-            >
-              Produits
-            </Button>
+            <Link to='Home' style={{textDecoration: 'none', color: 'inherit'}}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{color: 'white', display: 'block'}}
+              >
+                Accueil
+              </Button>
+            </Link>
+            <Link to='Products' style={{textDecoration: 'none', color: 'inherit'}}>
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{color: 'white', display: 'block'}}
+              >
+                Produits
+              </Button>
+            </Link>
           </Box>
         </Toolbar>
       </Container>
     </AppBar>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/home">Accueil</Link>
-          </li>
-          <li>
-            <Link to="/products">Produits</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <Toolbar/>
     <div>
       <StoreContext.Provider value={store.data}>
         <Outlet/>

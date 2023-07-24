@@ -4,7 +4,9 @@ import ProductCard from '../../components/product-card/ProductCard.tsx';
 import {Container} from '@mui/material';
 
 const Products = () => {
-  const product = useFetch<Product[]>('http://localhost:3000/api/store/1/product');
+  const url = `${import.meta.env.VITE_API_BASE}store/1/product`;
+
+  const product = useFetch<Product[]>(url);
 
   if (product.error) {
     return <h1>Erreur</h1>;

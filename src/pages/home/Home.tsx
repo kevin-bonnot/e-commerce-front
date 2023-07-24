@@ -5,7 +5,9 @@ import {StoreContext} from '../../context/StoreContext.tsx';
 
 const Home = () => {
   const store = useContext(StoreContext);
-  const product = useFetch<Product[]>('http://localhost:3000/api/store/1/product');
+  const url = `${import.meta.env.VITE_API_BASE}store/1/product`;
+
+  const product = useFetch<Product[]>(url);
 
   return (
     <>
